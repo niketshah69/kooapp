@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="@color/colorBackground">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -20,6 +21,7 @@
                 app:contentInsetStartWithNavigation="0dp"
                 app:subtitleTextAppearance="@style/TextAppearance.AppTheme.Label"
                 app:subtitleTextColor="@color/white"
+                app:title="@string/app_name"
                 app:titleTextAppearance="@style/TextAppearance.AppTheme.Heading1"
                 app:titleTextColor="@color/white"
                 tools:title="Test" />
@@ -27,8 +29,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="match_parent">
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/holder_swipe_refresh"
@@ -64,13 +65,11 @@
                     android:text="@string/loading" />
             </LinearLayout>
 
-            <TextView
+            <include
                 android:id="@+id/layout_error"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/generic_error_msg"
+                layout="@layout/layout_generic_error"
                 android:visibility="gone" />
 
         </FrameLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 </layout>

@@ -6,12 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.niket.sample.base.view.BaseViewHolder
 import com.niket.sample.databinding.ItemPostBinding
 import com.niket.sample.databinding.ItemProgressBinding
-import com.niket.sample.feature.helper.ClickListener
 import com.niket.sample.feature.model.PostResponseItem
 
 class HomeAdapter(
-    private val data: List<IHomeAdapterItem>,
-    private val clickListener: ClickListener
+    private val data: MutableList<IHomeAdapterItem>
 ) : RecyclerView.Adapter<BaseViewHolder>() {
 
     companion object {
@@ -72,12 +70,29 @@ class HomeAdapter(
             binding.tvTitle.text = postItem?.title
             binding.tvDescription.text =
                 postItem?.body
-            binding.root.setOnClickListener {
-                clickListener.invoke(postItem)
-            }
         }
     }
 
+    fun addLoading() {
+        data.add(LoaderItem())
+        notifyItemInserted(data.size - 1)
+    }
+
+    fun removeLoading() {
+        val position: Int = data.size - 1
+        val item = getItem(position)
+        if (item != null && item is LoaderItem) {
+            data.removeAt(position)
+            notifyItemRemoved(position)
+        }
+    }
+
+    fun addItems(list: List<PostResponseItem>?) {
+        list?.map { DataItem(it) }?.let {
+            data.addAll(it)
+        }
+        notifyDataSetChanged()
+    }
 }
 
 interface IHomeAdapterItem
