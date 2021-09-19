@@ -13,7 +13,9 @@ class GsonModule {
 
     @Provides
     @AppScope
-    fun provideGson(): Gson = GsonBuilder().create()
+    fun provideGson(): Gson = GsonBuilder()
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ")
+        .create()
 
     @Provides
     @AppScope

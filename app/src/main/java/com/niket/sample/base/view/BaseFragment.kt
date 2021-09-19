@@ -10,7 +10,7 @@ import dagger.android.support.AndroidSupportInjection
 
 abstract class BaseFragment : Fragment() {
 
-    protected var _binding: ViewBinding? = null
+    private var _binding: ViewBinding? = null
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)

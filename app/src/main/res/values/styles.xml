@@ -1,0 +1,63 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryColor</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Heading1" parent="TextAppearance.AppTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Heading1.Bold" parent="TextAppearance.AppTheme.Heading1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.AppTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Body1.Bold" parent="TextAppearance.AppTheme.Body1">
+        <item name="font">@font/source_sans_pro_semibold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Label" parent="TextAppearance.AppTheme">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Label.Bold" parent="TextAppearance.AppTheme.Label">
+        <item name="android:fontFamily">@font/source_sans_pro_semibold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Label.Secondary" parent="TextAppearance.AppTheme.Label">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Label.Ternary" parent="TextAppearance.AppTheme.Label">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorTernary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Hint" parent="TextAppearance.AppTheme">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorTernary</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Error" parent="TextAppearance.AppTheme">
+        <item name="android:textSize">12sp</item>
+        <item name="color">@color/colorError</item>
+    </style>
+
+</resources>
