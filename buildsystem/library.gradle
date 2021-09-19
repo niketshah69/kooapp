@@ -17,8 +17,7 @@ def versions = [
 
         gsonVersion                 : '2.8.2',
 
-        retrofitVersion             : '2.4.0',
-        retrofitrxadapterVersion    : '2.3.0',
+        retrofitVersion             : '2.9.0',
 
         coroutineVersion            : '0.22.5',
         loggingInterceptorVersion   : '3.10.0',

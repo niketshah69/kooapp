@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Koo Sample</string>
+    <string name="title_details">Details</string>
+    <string name="error_invalid_url">Error: Invalid data</string>
+    <string name="loading">Loading...</string>
+    <string name="generic_error_msg">Something went wrong</string>
+    <string name="retry">Retry</string>
+    <string name="state_empty_list">No items are found</string>
 </resources>
