@@ -26,7 +26,6 @@ def versions = [
         android_gradle_plugin       : '4.1.2',
         kotlin_version              : '1.3.72',
         lifecycleVersion: "2.3.1",
-        glideVersion    : "4.12.0",
 ]
 def androidx = [
         appcompat         : "androidx.appcompat:appcompat:$versions.androidx.appcompat",
@@ -62,7 +61,6 @@ dep.gson = gson
 
 def kaptDep = [
         lifeCycleCompiler: "androidx.lifecycle:lifecycle-compiler:$versions.architectureComponentVersion",
-        glideCompiler: "com.github.bumptech.glide:compiler:$versions.glideVersion",
 ]
 dep.kaptDep = kaptDep
 
@@ -71,11 +69,6 @@ def daggerKaptDep = [
         daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$versions.daggerVersion"
 ]
 dep.daggerKaptDep = daggerKaptDep
-
-def glide = [
-        glide          : "com.github.bumptech.glide:glide:$versions.glideVersion",
-]
-dep.glide = glide
 
 def coroutines = [
         coroutinesCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutineVersion",
