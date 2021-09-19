@@ -10,7 +10,7 @@ import dagger.android.HasActivityInjector
 import dagger.android.HasServiceInjector
 import javax.inject.Inject
 
-class AppController : Application(), HasActivityInjector, HasServiceInjector {
+class AppController : Application(), HasActivityInjector {
     @Inject
     lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
@@ -24,9 +24,5 @@ class AppController : Application(), HasActivityInjector, HasServiceInjector {
     override fun onCreate() {
         super.onCreate()
         DaggerAppComponent.builder().application(this).build().inject(this)
-    }
-
-    override fun serviceInjector(): AndroidInjector<Service> {
-        return dispatchingServiceInjector
     }
 }
