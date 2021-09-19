@@ -10,5 +10,3 @@ fun View?.show() {
 fun View?.hide() {
     this?.visibility = View.GONE
 }
-
-typealias ClickListener = (PostResponseItem?) -> Unit
