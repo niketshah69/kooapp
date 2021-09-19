@@ -1,17 +1,25 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
+apply from: '../buildsystem/library.gradle'
+apply from: '../buildsystem/config.gradle'
+
+def config = ext.configuration
+
 android {
-    compileSdk 30
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.niket.sample"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode buildVersionCode()
+        versionName buildVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,10 +37,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
+    kapt dep.kaptDep.values()
+    kapt dep.daggerKaptDep.values()
+    implementation dep.dagger.values()
+    implementation dep.androidx.values()
+    implementation dep.okhttp3.values()
+    implementation dep.gson.values()
+    implementation dep.glide.values()
+    implementation dep.coroutines.values()
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'

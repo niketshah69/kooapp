@@ -1,0 +1,19 @@
+def configuration = [
+        applicationId    : "com.niket.koo.assignmnet",
+        versionMajor     : 1,
+        versionMedium    : 0,
+        versionMinor     : 0,
+        buildNum         : 0,
+        compileSdkVersion: 30,
+        minSdkVersion    : 16,
+        targetSdkVersion : 30
+]
+
+ext.configuration = configuration
+
+ext.buildVersionCode = {
+    return (100 * configuration.versionMajor + 10 * configuration.versionMedium + configuration.versionMinor) * 1000 + configuration.buildNum
+}
+ext.buildVersionName = {
+    return configuration.versionMajor + "." + configuration.versionMedium + "." + configuration.versionMinor
+}

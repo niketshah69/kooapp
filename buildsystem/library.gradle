@@ -1,0 +1,88 @@
+def dep = [:]
+
+def versions = [
+        androidx                    : [
+                'appcompat'        : '1.2.0',
+                'constraint_layout': '2.0.4',
+                'core_ktx'         : '1.3.2',
+                'view_model'       : '2.3.1',
+                'live_data'        : '2.3.1',
+        ],
+
+        architectureComponentVersion: '2.0.0',
+
+        daggerVersion               : "2.16",
+
+        okHttpVersion               : "3.10.0",
+
+        gsonVersion                 : '2.8.2',
+
+        retrofitVersion             : '2.4.0',
+        retrofitrxadapterVersion    : '2.3.0',
+
+        coroutineVersion            : '0.22.5',
+        loggingInterceptorVersion   : '3.10.0',
+        kotlinx_coroutine           : '1.4.2',
+
+        android_gradle_plugin       : '4.1.2',
+        kotlin_version              : '1.3.72',
+        lifecycleVersion: "2.3.1",
+        glideVersion    : "4.12.0",
+]
+def androidx = [
+        appcompat         : "androidx.appcompat:appcompat:$versions.androidx.appcompat",
+        design            : "com.google.android.material:material:1.4.0",
+        constraintlayout  : "androidx.constraintlayout:constraintlayout:$versions.androidx.constraint_layout",
+        lifecycleExtension: "android.arch.lifecycle:extensions:1.1.0",
+        coreKtx           : "androidx.core:core-ktx:$versions.androidx.core_ktx",
+        viewModel         : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.androidx.view_model",
+        liveData          : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.androidx.live_data"
+]
+
+dep.androidx = androidx
+
+def dagger = [
+        dagger        : "com.google.dagger:dagger:$versions.daggerVersion",
+        dagger_android: "com.google.dagger:dagger-android:$versions.daggerVersion",
+        daggerSupport : "com.google.dagger:dagger-android-support:$versions.daggerVersion"
+]
+dep.dagger = dagger
+
+def okhttp3 = [
+        okHttp             : "com.squareup.okhttp3:okhttp:$versions.okHttpVersion",
+        logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okHttpVersion",
+        retrofit           : "com.squareup.retrofit2:retrofit:$versions.retrofitVersion",
+]
+dep.okhttp3 = okhttp3
+
+def gson = [
+        gson          : "com.google.code.gson:gson:$versions.gsonVersion",
+        gson_converter: "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
+]
+dep.gson = gson
+
+def kaptDep = [
+        lifeCycleCompiler: "androidx.lifecycle:lifecycle-compiler:$versions.architectureComponentVersion",
+        glideCompiler: "com.github.bumptech.glide:compiler:$versions.glideVersion",
+]
+dep.kaptDep = kaptDep
+
+def daggerKaptDep = [
+        daggerCompiler        : "com.google.dagger:dagger-compiler:$versions.daggerVersion",
+        daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$versions.daggerVersion"
+]
+dep.daggerKaptDep = daggerKaptDep
+
+def glide = [
+        glide          : "com.github.bumptech.glide:glide:$versions.glideVersion",
+]
+dep.glide = glide
+
+def coroutines = [
+        coroutinesCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutineVersion",
+        coroutinesAndroid          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutineVersion",
+]
+dep.coroutines = coroutines
+
+ext.dep = dep
+ext.versions = versions
